@@ -215,6 +215,39 @@ whoLink.addEventListener('click', function (event) {
    }
 });
 
+// Get all clickable paragraphs
+const clickableParagraphs = document.querySelectorAll('.clickable');
+
+// Initialize the index of the currently visible paragraph
+let currentIndex = 0;
+
+// Function to hide all paragraphs
+function hideAllParagraphs() {
+  clickableParagraphs.forEach((paragraph) => {
+    paragraph.style.display = 'none';
+  });
+}
+
+// Function to show the next paragraph
+function showNextParagraph() {
+  // Hide all paragraphs
+  hideAllParagraphs();
+
+  // Show the next paragraph, if it exists
+  if (currentIndex < clickableParagraphs.length) {
+    clickableParagraphs[currentIndex].style.display = 'block';
+    currentIndex++;
+  }
+}
+
+// Initially, hide all paragraphs except the first one
+hideAllParagraphs();
+clickableParagraphs[0].style.display = 'block';
+
+// Add a click event listener to the <div id="who"> element
+const whoDiv = document.getElementById('who');
+whoDiv.addEventListener('click', showNextParagraph);
+
 /**
  * Toggle how we did associations
  */
