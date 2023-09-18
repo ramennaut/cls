@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Collaborative learning strategies</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Code+Pro:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        
+        <!-- Navigation menu -->
+        <nav id="nav-menu">
+            <h1>Most times, we learn by <span id="light-up">asking</span>.</h1>
+            <ul class = "list-horizontal">
+                <li><a href="#what">WHAT?</a></li>
+                <li><a href="#why">WHY?</a></li>
+                <li><a href="#when">WHEN?</a></li>
+                <li><a href="#where">WHERE?</a></li>
+                <li><a href="#who">WHO?</a></li>
+                <li><a href="#why">HOW?</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div id="main-container">
+            <hr>
+            
+            <!-- ASCII art container -->
+            <div id="ascii-art">
+                <pre>
+                                        +              #####
+                                        / \
+                    _____        _____     __________/ o \/\_________      _________
+                    |o o o|_______|    |___|               | | # # #  |____|o o o o  | /\
+                    |o o o|  * * *|: ::|. .|               |o| # # #  |. . |o o o o  |//\\
+                    |o o o|* * *  |::  |. .| []  []  []  []|o| # # #  |. . |o o o o  |((|))
+                    |o o o|**  ** |:  :|. .| []  []  []    |o| # # #  |. . |o o o o  |((|))
+                    |_[]__|__[]___|_||_|___|____________;;_|_|___/\___|_.|_|____[]___|  |
+                </pre>
+            </div>
+
+            <!-- Defining collaborative learning -->
+            <section  id = "what">
+
+                <div id = "definition-par">
+                    <p>Collaborative Learning can be defined as an educational environment which requires or promotes team contributions such that the output is more than the sum of its parts. With this in mind, it is imperative that the attention of this project is less focused on the scope of the members and more focused on the logistics and experience of the objective for collaborative learning.</p>
+                </div>
+
+                <div id = "definition-container">
+                    <div id = "dropdown-container">
+                        <h2>Learning is...</h2>
+                        <select id = "learningDropdown">
+                            <option value = "" disabled selected>Learning is...</option>
+                            <option value ="option1">an essential part of human existence.</option>
+                            <option value ="option2">the process that creates progress through radical thinking and pushing boundaries.</option>
+                            <option value ="option3">a method to achieve a deeper understanding of complicated issues.</option>
+                            <option value ="option4">a means to recognize solutions for societal problems.</option>
+                        </select>
+                        <h2>Collaboration is...</h2>
+                        <select id = "collaborationDropdown">
+                            <option value = "" disabled selected>Collaboration is...</option>
+                            <option value ="option1">a requirement or promotion of team contributions.</option>
+                            <option value ="option2">a way to create an output that is more than the sum of its individual parts.</option>
+                            <option value ="option3">a method to harness the wisdom of the crowd, where a collective of individuals can offer diverse opinions.</option>
+                            <option value ="option4">an approach that seeks to improve outcomes by sharing responsibilities, ideas, and resources among team members.</option>
+                        </select>
+                    </div>
+    
+                    <div id = "result-container">
+                        <h1>What is collaborative learning?</h1>
+                        <p id = "resultText"></p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        
+        <!-- Pop-up modal -->
+        <div id = "popup">
+            <div class = "popup-content">
+                <p id = "popup-text"></p>
+                <button onclick="closePopup()">I do</button>
+                <button onclick="changePrompt()">I don't</button>
+            </div>
+        </div>
+
+        <!-- Javascript integration -->
+        <script src="script.js"></script>
+
+    </body>
+</html>
