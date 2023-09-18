@@ -230,15 +230,20 @@ function hideAllParagraphs() {
 
 // Function to show the next paragraph
 function showNextParagraph() {
-  // Hide all paragraphs
-  hideAllParagraphs();
-
-  // Show the next paragraph, if it exists
-  if (currentIndex < clickableParagraphs.length) {
-    clickableParagraphs[currentIndex].style.display = 'block';
-    currentIndex++;
+    // Hide all paragraphs
+    hideAllParagraphs();
+  
+    // Show the next paragraph, if it exists
+    if (currentIndex < clickableParagraphs.length) {
+      clickableParagraphs[currentIndex].style.display = 'block';
+      currentIndex++;
+    }
+  
+    // Reset the index to cycle back to the first paragraph
+    if (currentIndex >= clickableParagraphs.length) {
+      currentIndex = 0;
+    }
   }
-}
 
 // Initially, hide all paragraphs except the first one
 hideAllParagraphs();
