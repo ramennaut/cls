@@ -134,3 +134,60 @@ function displayResult() {
         resultText.innerHTML = result;
     }
 }
+
+
+/**
+ * Toggle why we care
+ */
+
+// Get references to the elements
+const whyLink = document.querySelector('a[href="#why"]');
+const whySection = document.getElementById('why');
+
+// Hide the "why" section initially
+whySection.style.display = 'none';
+
+// Add a click event listener to the "Why?" link
+whyLink.addEventListener('click', function (event) {
+   event.preventDefault(); // Prevent the link from navigating
+
+   // Toggle the visibility of the "why" section
+   if (whySection.style.display === 'none') {
+      whySection.style.display = 'block';
+   } else {
+      whySection.style.display = 'none';
+   }
+});
+
+/**
+ * Toggle so that and sucks that
+ */
+
+// Define arrays of positive and negative prompts
+const positivePrompts = [
+    "we can advocate for people-centric learning", 
+    "we can make learning exciting", 
+    "we can help incite creativity in the individual"
+];
+const negativePrompts = [
+    "our current education system is artifact-oriented", 
+    "we focus on the 'what is,' not the 'why' or the 'what if'",
+     "ur socioeconomic reality limits our opportunities"
+    ];
+
+// Function to change prompts and cycle through them
+function changePrompts() {
+    // Update the text of the spans with the current prompts
+    document.getElementById("prompt_positive").textContent = positivePrompts[currentPromptIndex];
+    document.getElementById("prompt_negative").textContent = negativePrompts[currentPromptIndex];
+
+    // Increment the current prompt index and loop back to 0 if it exceeds the array length
+    currentPromptIndex = (currentPromptIndex + 1) % positivePrompts.length;
+}
+
+// Attach the changePrompts function to the "Learn more" text
+document.getElementById("learn_more").addEventListener("click", changePrompts);
+
+// Initially set the prompts to the first items in the arrays
+document.getElementById("prompt_positive").textContent = positivePrompts[0];
+document.getElementById("prompt_negative").textContent = negativePrompts[0];
