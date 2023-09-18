@@ -191,3 +191,82 @@ document.getElementById("learn_more").addEventListener("click", changePrompts);
 // Initially set the prompts to the first items in the arrays
 document.getElementById("prompt_positive").textContent = positivePrompts[0];
 document.getElementById("prompt_negative").textContent = negativePrompts[0];
+
+/**
+ * Toggle who did we interview
+ */
+
+// Get references to the elements
+const whoLink = document.querySelector('a[href="#who"]');
+const whoSection = document.getElementById('who');
+
+// Hide the "why" section initially
+whoSection.style.display = 'none';
+
+// Add a click event listener to the "Why?" link
+whoLink.addEventListener('click', function (event) {
+   event.preventDefault(); // Prevent the link from navigating
+
+   // Toggle the visibility of the "why" section
+   if (whoSection.style.display === 'none') {
+      whoSection.style.display = 'block';
+   } else {
+      whoSection.style.display = 'none';
+   }
+});
+
+/**
+ * Toggle how we did associations
+ */
+
+// Get references to the elements
+const howLink = document.querySelector('a[href="#how"]');
+const howSection = document.getElementById('how');
+
+// Hide the "why" section initially
+howSection.style.display = 'none';
+
+// Add a click event listener to the "Why?" link
+howLink.addEventListener('click', function (event) {
+   event.preventDefault(); // Prevent the link from navigating
+
+   // Toggle the visibility of the "why" section
+   if (howSection.style.display === 'none') {
+      howSection.style.display = 'block';
+   } else {
+      howSection.style.display = 'none';
+   }
+});
+
+/** 
+ * Toggle convergence 
+ */
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Attach click event listener to the #now menu item
+    document.querySelector('a[href="#now"]').addEventListener('click', function (e) {
+        e.preventDefault();
+        openObjectives();
+    });
+});
+
+// Function to open all the objectives
+function openObjectives() {
+    document.getElementById('objectiveModals').style.display = 'block';
+    document.getElementById('objective1').style.display = 'block';
+    document.getElementById('objective2').style.display = 'block';
+    document.getElementById('objective3').style.display = 'block';
+}
+
+// Function to close a specific objective
+function closeObjective(objectiveId) {
+    document.getElementById(objectiveId).style.display = 'none';
+    // Check if all objectives are closed
+    if (
+        document.getElementById('objective1').style.display === 'none' &&
+        document.getElementById('objective2').style.display === 'none' &&
+        document.getElementById('objective3').style.display === 'none'
+    ) {
+        document.getElementById('objectiveModals').style.display = 'none';
+    }
+}
