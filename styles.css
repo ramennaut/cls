@@ -148,6 +148,10 @@ select:hover {
     padding: 20px;
 }
 
+#who p {
+    font-size: 18px;
+}
+
 /* Pop-up styles */
 #popup {
     position: fixed;
