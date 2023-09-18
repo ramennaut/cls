@@ -133,12 +133,13 @@ select:hover {
     font-size: 14px;
 }
 
-.learn-more:hover {
+.learn-more {
     color: blue;
 }
 
-.clickable:hover {
+.learn-more:hover {
     color: blue;
+    text-decoration: underline;
 }
 
 #how {

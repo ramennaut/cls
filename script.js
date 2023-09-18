@@ -172,7 +172,7 @@ const positivePrompts = [
 const negativePrompts = [
     "our current education system is artifact-oriented", 
     "we focus on the 'what is,' not the 'why' or the 'what if'",
-     "ur socioeconomic reality limits our opportunities"
+    "our socioeconomic reality limits our opportunities"
     ];
 
 // Function to change prompts and cycle through them
